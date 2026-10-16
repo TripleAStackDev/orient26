@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excel skills - Web Learning Diary</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 1rem; color: #222; }
+    img { max-width: 100%; height: auto; border: 1px solid #ccc; }
+    code { background: #f0f0f0; padding: 0.1em 0.3em; }
+    h2 { margin-top: 2rem; }
+    .note { font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Back to landing page</a></p>
+
+  <h1>Excel skills</h1>
+  <p>This page collects the Excel formulas I practised, with the result of each one. All screenshots come from a small demo workbook with example data (it is not my real study record).</p>
+
+  <h2>Conditional formatting</h2>
+  <!-- TODO: write your own 1-2 sentences: what the rule does (Greater Than 3 on the grades) and when you would use it -->
+  <p>TODO</p>
+  <img src="images/cond-format.png" alt="Greater Than dialog and the grades 4 and 5 highlighted in red">
+
+  <h2>Basic math: SUM</h2>
+  <p>Adds all the credits in cells B2 to B7. The result is 29 total credits. Use it to total a column automatically.</p>
+  <p><code>=SUM(B2:B7)</code></p>
+  <img src="images/sum.png" alt="SUM formula in cell H2 returning 29">
+
+  <h2>Average: AVERAGE</h2>
+  <p>Adds the grades in C2 to C7 and divides by the number of grades, which is 3. Excel ignores the empty cells C5 to C7, so the result is (4 + 5 + 2) / 3 = 3.67. Use it to find the mean of a set of numbers.</p>
+  <p><code>=AVERAGE(C2:C7)</code></p>
+  <img src="images/average.png" alt="AVERAGE formula in cell H3 returning 3.67">
+
+  <h2>Operations with conditions: SUMIFS</h2>
+  <p>Adds the credits in B2:B7 only for the rows where the status in D2:D7 is "Completed". The result is 13. Use it to total only the values that meet a condition.</p>
+  <p><code>=SUMIFS(B2:B7,D2:D7,"Completed")</code></p>
+  <img src="images/sumifs.png" alt="SUMIFS formula in cell H4 returning 13">
+
+  <h2>Operations with conditions: COUNTIF</h2>
+  <p>Counts the cells in D2:D7 whose status is "In Progress". The result is 2 (Orientation and Finnish 1). Use it to count items in a category.</p>
+  <p><code>=COUNTIF(D2:D7,"In Progress")</code></p>
+  <img src="images/countif.png" alt="COUNTIF formula in cell H5 returning 2">
+
+  <h2>Lookup: XLOOKUP</h2>
+  <p>Takes the course name typed in H9, finds it in A2:A7 and returns the credits from B2:B7. For "Finnish 1" the result is 5. Use it to fetch information from a table without searching the rows by hand.</p>
+  <p><code>=XLOOKUP(H9,A2:A7,B2:B7)</code></p>
+  <img src="images/xlookup.png" alt="XLOOKUP formula in cell H10 returning 5">
+
+  <p class="note">Example data for demonstration only.</p>
+  <p><a href="index.html">Back to landing page</a></p>
+</body>
+</html>
